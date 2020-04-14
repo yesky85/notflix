@@ -79,7 +79,7 @@ const DetailPresenter = ({ result, error, loading }) =>
       <Helmet>
         <title>
           {result.original_title ? result.original_title : result.original_name}{" "}
-          | Nomflix
+          | Notflix
         </title>
       </Helmet>
       <Backdrop
