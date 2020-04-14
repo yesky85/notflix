@@ -27,3 +27,8 @@ Learning React and ES6 by building a Movie Discovery App.
 - [ ] Collections Link
 - [ ] /collections Route
 - [ ] On TV Show, show seasons and creators
+
+# Deploy
+
+gh-pages "homepage": "https://yesky85.github.io/notflix/"
+netlify "homepage": "https://react-notflix.netlify.com/"
