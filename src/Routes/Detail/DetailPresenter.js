@@ -177,7 +177,7 @@ const DetailPresenter = ({ result, error, loading, location: { pathname } }) =>
                 </Link>
               </Button>
               <Button current={pathname === `/movie/${result.id}/youtube`}>
-                <Link to={`/movie/${result.id}/youtube`}>YOUTUBE</Link>
+                <Link to={`/movie/${result.id}/youtube`}>TRAILER</Link>
               </Button>
               <Button current={pathname === `/movie/${result.id}/product`}>
                 <Link to={`/movie/${result.id}/product`}>PRODUCT</Link>
@@ -200,7 +200,7 @@ const DetailPresenter = ({ result, error, loading, location: { pathname } }) =>
                 <Link to={`/tv/${result.id}/season`}>SEASON</Link>
               </Button>
               <Button current={pathname === `/tv/${result.id}/youtube`}>
-                <Link to={`/tv/${result.id}/youtube`}>YOUTUBE</Link>
+                <Link to={`/tv/${result.id}/youtube`}>TRAILER</Link>
               </Button>
               <Button current={pathname === `/tv/${result.id}/product`}>
                 <Link to={`/tv/${result.id}/product`}>PRODUCT</Link>

@@ -3,16 +3,18 @@ import styled from "styled-components";
 
 const Container = styled.div`
   width: 520px;
+  height: 320px;
+  overflow: scroll;
 `;
 
 const Title = styled.span``;
 
 const Trailer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, 500px);
-  grid-auto-rows: 300px;
+  grid-auto-columns: 500px;
+  grid-template-rows: 300px;
+  grid-auto-flow: column;
   gap: 10px;
-  margin-bottom: 10px;
 `;
 
 const Youtube = ({ result }) => {

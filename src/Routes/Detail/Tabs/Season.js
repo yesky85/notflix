@@ -4,22 +4,26 @@ import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 520px;
+  height: 320px;
+  overflow: scroll;
 `;
 
 const Title = styled.span``;
 
 const ImageContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, 120px);
-  grid-auto-rows: 190px;
+  grid-auto-columns: 200px;
+  grid-template-rows: 300px;
+  grid-auto-flow: column;
   gap: 10px;
 `;
 
 const Image = styled.div`
   background-image: url(${(props) => props.bgUrl});
-  background-size: cover;
-  height: 180px;
-  width: 120px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100%;
 `;
 
 const Season = ({ result }) => {

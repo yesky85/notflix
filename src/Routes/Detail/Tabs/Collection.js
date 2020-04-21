@@ -5,22 +5,26 @@ import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 520px;
+  height: 320px;
+  overflow: scroll;
 `;
 
 const Title = styled.span``;
 
 const ImageContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, 120px);
-  grid-auto-rows: 190px;
+  grid-auto-columns: 200px;
+  grid-template-rows: 300px;
+  grid-auto-flow: column;
   gap: 10px;
 `;
 
 const Image = styled.div`
   background-image: url(${(props) => props.bgUrl});
-  background-size: cover;
-  height: 180px;
-  width: 120px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100%;
 `;
 
 const Collection = ({
@@ -35,7 +39,9 @@ const Collection = ({
   const collections = async () => {
     const { id } = result;
     try {
-      const { data: parts } = await collectionApi.collectionDetail(id);
+      const {
+        data: { parts },
+      } = await collectionApi.collectionDetail(id);
       setParts(parts);
     } catch (e) {
       console.log(e);
@@ -53,8 +59,8 @@ const Collection = ({
   ) : (
     <Container>
       <ImageContainer>
-        {parts.parts &&
-          parts.parts.map((part) => (
+        {parts &&
+          parts.map((part) => (
             <Link key={part.id} to={`/movie/${part.id}`}>
               <Image
                 bgUrl={
@@ -63,7 +69,7 @@ const Collection = ({
                     : require("../../../assets/noPosterSmall.png")
                 }
               />
-              <Title>{part.title}</Title>
+              <Title>{part.title && part.title.substring(0, 32)}...</Title>
             </Link>
           ))}
       </ImageContainer>
