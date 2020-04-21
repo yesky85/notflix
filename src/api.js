@@ -26,6 +26,10 @@ export const moviesApi = {
     }),
 };
 
+export const collectionApi = {
+  collectionDetail: (id) => api.get(`collection/${id}`),
+};
+
 export const tvApi = {
   topRated: () => api.get("tv/top_rated"),
   popular: () => api.get("tv/popular"),
